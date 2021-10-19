@@ -1,13 +1,21 @@
 ﻿using CasaDoCodigo.Data.EfCore.Configuration;
 using CasaDoCodigo.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace CasaDoCodigo.Data.EfCore
 {
     public class ApplicationDbContext : DbContext
     {
-        public ApplicationDbContext(DbContextOptions options) : base(options)
+        private readonly IConfiguration _configuration;
+        private readonly IHttpContextAccessor _contextAccessor;
+
+        public ApplicationDbContext(DbContextOptions options, IConfiguration configuration,
+            IHttpContextAccessor contextAccessor) : base(options)
         {
+            _configuration = configuration;
+            _contextAccessor = contextAccessor;
         }
 
         public DbSet<Register> Registers { get; set; }
@@ -16,7 +24,9 @@ namespace CasaDoCodigo.Data.EfCore
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            base.OnConfiguring(optionsBuilder);
+            var teste = _contextAccessor.HttpContext?.Connection;
+            var connectionString = _configuration.GetConnectionString("development");
+            optionsBuilder.UseSqlServer("connectionString");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
