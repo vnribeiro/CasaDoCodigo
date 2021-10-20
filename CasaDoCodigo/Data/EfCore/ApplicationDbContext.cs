@@ -24,9 +24,8 @@ namespace CasaDoCodigo.Data.EfCore
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var teste = _contextAccessor.HttpContext?.Connection;
             var connectionString = _configuration.GetConnectionString("development");
-            optionsBuilder.UseSqlServer("connectionString");
+            optionsBuilder.UseSqlServer(connectionString);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

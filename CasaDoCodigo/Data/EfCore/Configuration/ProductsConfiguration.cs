@@ -42,7 +42,10 @@ namespace CasaDoCodigo.Data.EfCore.Configuration
                 .IsRequired();
 
             builder
-                .HasOne(x => x.Category);
+                .HasOne(x => x.Category)
+                .WithOne()
+                .HasForeignKey<Product>("category_id")
+                .IsRequired();
         }
     }
 }

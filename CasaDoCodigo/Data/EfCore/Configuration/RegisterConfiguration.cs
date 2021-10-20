@@ -43,8 +43,8 @@ namespace CasaDoCodigo.Data.EfCore.Configuration
                 .IsRequired();
 
             builder
-                .Property(x => x.Adress)
-                .HasColumnName("adress")
+                .Property(x => x.Address)
+                .HasColumnName("address")
                 .HasColumnType("varchar(100)")
                 .IsRequired();
 
@@ -55,19 +55,16 @@ namespace CasaDoCodigo.Data.EfCore.Configuration
                 .IsRequired();
 
             builder
-                .Property(x => x.Fu)
-                .HasColumnName("fu")
+                .Property(x => x.Uf)
+                .HasColumnName("uf")
                 .HasColumnType("char(2)")
                 .IsRequired();
 
             builder
-                .Property(x => x.ZipCode)
-                .HasColumnName("zip_code")
+                .Property(x => x.Cep)
+                .HasColumnName("cep")
                 .HasColumnType("varchar(25)")
                 .IsRequired();
-
-            builder
-                .HasOne(x => x.Order);
         }
     }
 }

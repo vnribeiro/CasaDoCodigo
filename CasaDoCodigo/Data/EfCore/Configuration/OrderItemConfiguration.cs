@@ -32,10 +32,10 @@ namespace CasaDoCodigo.Data.EfCore.Configuration
                 .IsRequired();
 
             builder
-                .HasOne(x => x.Order);
-
-            builder
-                .HasOne(x => x.Product);
+                .HasOne(x => x.Product)
+                .WithOne()
+                .HasForeignKey<OrderItem>("product_id")
+                .IsRequired();
         }
     }
 }

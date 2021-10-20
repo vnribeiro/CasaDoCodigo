@@ -19,10 +19,16 @@ namespace CasaDoCodigo.Data.EfCore.Configuration
                 .HasIndex(x => x.Id);
 
             builder
-                .HasMany(x => x.Items);
+                .HasMany(x => x.Items)
+                .WithOne(x => x.Order)
+                .HasForeignKey("order_id")
+                .IsRequired();
 
             builder
-                .HasOne(x => x.Register);
+                .HasOne(x => x.Register)
+                .WithOne(x => x.Order)
+                .HasForeignKey<Register>("order_id")
+                .IsRequired();
         }
     }
 }
