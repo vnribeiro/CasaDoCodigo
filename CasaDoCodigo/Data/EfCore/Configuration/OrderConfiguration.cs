@@ -6,6 +6,9 @@ namespace CasaDoCodigo.Data.EfCore.Configuration
 {
     public class OrderConfiguration : IEntityTypeConfiguration<Order>
     {
+        /// <summary>
+        ///     Contains the settings for EF CORE of the properties of the <see cref="Order" /> class.
+        /// </summary>
         public void Configure(EntityTypeBuilder<Order> builder)
         {
             builder

@@ -6,6 +6,9 @@ namespace CasaDoCodigo.Data.EfCore.Configuration
 {
     public class CategoryConfiguration : IEntityTypeConfiguration<Category>
     {
+        /// <summary>
+        ///     Contains the settings for EF CORE of the properties of the <see cref="Category" /> class.
+        /// </summary>
         public void Configure(EntityTypeBuilder<Category> builder)
         {
             builder

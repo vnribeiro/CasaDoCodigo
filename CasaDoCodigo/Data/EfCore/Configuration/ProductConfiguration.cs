@@ -6,6 +6,9 @@ namespace CasaDoCodigo.Data.EfCore.Configuration
 {
     public class ProductConfiguration : IEntityTypeConfiguration<Product>
     {
+        /// <summary>
+        ///     Contains the settings for EF CORE of the properties of the <see cref="Product" /> class.
+        /// </summary>
         public void Configure(EntityTypeBuilder<Product> builder)
         {
             builder

@@ -1,5 +1,6 @@
 using System;
 using CasaDoCodigo.Helpers.Extensions;
+using CasaDoCodigo.Services.DataLoad;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -35,6 +36,9 @@ namespace CasaDoCodigo
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+
+                //Starts the service to import data into the database
+                serviceProvider.GetService<IDataLoadService>()?.InitializeDb();
             }
             else
             {

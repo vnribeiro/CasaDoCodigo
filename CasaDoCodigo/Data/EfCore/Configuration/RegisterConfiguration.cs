@@ -6,6 +6,9 @@ namespace CasaDoCodigo.Data.EfCore.Configuration
 {
     public class RegisterConfiguration : IEntityTypeConfiguration<Register>
     {
+        /// <summary>
+        ///     Contains the settings for EF CORE of the properties of the <see cref="Register" /> class.
+        /// </summary>
         public void Configure(EntityTypeBuilder<Register> builder)
         {
             builder
