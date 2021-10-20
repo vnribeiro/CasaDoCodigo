@@ -109,6 +109,12 @@ namespace CasaDoCodigo.Migrations
                 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_category_name",
+                table: "category",
+                column: "name",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
                 name: "IX_order_id",
                 table: "order",
                 column: "id");
@@ -121,14 +127,12 @@ namespace CasaDoCodigo.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_order_item_product_id",
                 table: "order_item",
-                column: "product_id",
-                unique: true);
+                column: "product_id");
 
             migrationBuilder.CreateIndex(
                 name: "IX_product_category_id",
                 table: "product",
-                column: "category_id",
-                unique: true);
+                column: "category_id");
 
             migrationBuilder.CreateIndex(
                 name: "IX_product_code",

@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace CasaDoCodigo.Data.EfCore.Configuration
 {
-    public class ProductsConfiguration : IEntityTypeConfiguration<Product>
+    public class ProductConfiguration : IEntityTypeConfiguration<Product>
     {
         public void Configure(EntityTypeBuilder<Product> builder)
         {
@@ -42,9 +42,8 @@ namespace CasaDoCodigo.Data.EfCore.Configuration
                 .IsRequired();
 
             builder
-                .HasOne(x => x.Category)
-                .WithOne()
-                .HasForeignKey<Product>("category_id")
+                .Property("CategoryId")
+                .HasColumnName("category_id")
                 .IsRequired();
         }
     }

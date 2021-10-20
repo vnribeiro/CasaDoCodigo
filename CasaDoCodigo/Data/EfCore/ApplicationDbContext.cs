@@ -33,7 +33,7 @@ namespace CasaDoCodigo.Data.EfCore
             modelBuilder.ApplyConfiguration(new CategoryConfiguration());
             modelBuilder.ApplyConfiguration(new OrderConfiguration());
             modelBuilder.ApplyConfiguration(new OrderItemConfiguration());
-            modelBuilder.ApplyConfiguration(new ProductsConfiguration());
+            modelBuilder.ApplyConfiguration(new ProductConfiguration());
             modelBuilder.ApplyConfiguration(new RegisterConfiguration());
         }
     }

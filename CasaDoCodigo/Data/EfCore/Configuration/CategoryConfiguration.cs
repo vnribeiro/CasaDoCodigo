@@ -23,6 +23,10 @@ namespace CasaDoCodigo.Data.EfCore.Configuration
                 .HasColumnName("name")
                 .HasColumnType("varchar(100)")
                 .IsRequired();
+
+            builder
+                .HasIndex(x => x.Name)
+                .IsUnique();
         }
     }
 }
