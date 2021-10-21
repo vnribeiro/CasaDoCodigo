@@ -34,7 +34,7 @@ namespace CasaDoCodigo.Data.EfCore.Configuration
             builder
                 .Property(x => x.Name)
                 .HasColumnName("name")
-                .HasColumnType("varchar(100)")
+                .HasColumnType("varchar(150)")
                 .IsRequired();
 
             builder

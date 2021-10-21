@@ -2,7 +2,7 @@
 
 namespace CasaDoCodigo.Data
 {
-    public interface ICategoryDao : IComand<Category>
+    public interface ICategoryDao : IQuery<Category>, IComand<Category>
     {
     }
 }

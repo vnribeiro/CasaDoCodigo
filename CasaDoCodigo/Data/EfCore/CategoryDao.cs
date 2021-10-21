@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using CasaDoCodigo.Models;
 
 namespace CasaDoCodigo.Data.EfCore
@@ -25,6 +26,11 @@ namespace CasaDoCodigo.Data.EfCore
         {
             _context.AddRange(obj);
             _context.SaveChanges();
+        }
+
+        public IEnumerable<Category> GetAll()
+        {
+            return _context.Categories.ToList();
         }
     }
 }

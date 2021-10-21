@@ -1,5 +1,6 @@
 ﻿using CasaDoCodigo.Data;
 using CasaDoCodigo.Data.EfCore;
+using CasaDoCodigo.Services.DataLoad;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
@@ -22,12 +23,19 @@ namespace CasaDoCodigo.Helpers.Extensions
             services.AddDbContext<ApplicationContext>();
 
             services.AddTransient<ICategoryDao, CategoryDao>();
+            services.AddTransient<IProductDao, ProductDao>();
 
             #endregion
 
             #region Dependencies
 
             services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+            #endregion
+
+            #region Services
+
+            services.AddTransient<IDataLoadService, DataLoadService>();
 
             #endregion
         }

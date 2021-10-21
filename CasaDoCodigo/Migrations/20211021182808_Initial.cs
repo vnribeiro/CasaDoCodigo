@@ -38,7 +38,7 @@ namespace CasaDoCodigo.Migrations
                     id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     code = table.Column<string>(type: "varchar(50)", nullable: false),
-                    name = table.Column<string>(type: "varchar(100)", nullable: false),
+                    name = table.Column<string>(type: "varchar(150)", nullable: false),
                     price = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false),
                     category_id = table.Column<int>(type: "int", nullable: false)
                 },

@@ -38,7 +38,7 @@ namespace CasaDoCodigo
                 app.UseDeveloperExceptionPage();
 
                 //Starts the service to import data into the database
-                serviceProvider.GetService<IDataLoadService>()?.InitializeDb();
+                serviceProvider.GetRequiredService<IDataLoadService>().InitializeDb();
             }
             else
             {
